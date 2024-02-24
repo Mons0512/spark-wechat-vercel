@@ -199,9 +199,13 @@ module.exports = async function (request, response) {
   let timeout;
   const done = new Promise((resolve) => {
     connect.on('message', (msg) => {
+      console.log('msg:',msg);
+      
       const data = JSON.parse(msg);
+      console.log('data:',data);
+      
       const payload = data.payload;
-      console.log('payload',payload);
+      console.log('payload:',payload);
       
       const choices = payload.choices;
       const header = data.header;
