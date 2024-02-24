@@ -201,6 +201,8 @@ module.exports = async function (request, response) {
     connect.on('message', (msg) => {
       const data = JSON.parse(msg);
       const payload = data.payload;
+      console.log('payload',payload);
+      
       const choices = payload.choices;
       const header = data.header;
       const code = header.code;
